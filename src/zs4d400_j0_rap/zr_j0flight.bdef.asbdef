@@ -1,0 +1,53 @@
+managed implementation in class zbp_r_j0flight unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_J0FLIGHT alias flight
+persistent table zj0flight
+draft table zj0flight_d
+lock master total etag LastChangedAt
+authorization master ( global )
+{
+  create;
+  update;
+  delete;
+
+//  " Validaciones existentes + Nueva validación de precio
+  validation CheckSemanticKey on save { create; update; }
+  validation CheckCarrier     on save { create; update; field Carrid; }
+  validation validatePrice    on save { create; field Price; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+
+  draft determine action Prepare
+  {
+    validation CheckSemanticKey;
+    validation CheckCarrier;
+    validation validatePrice;
+  }
+
+  mapping for zj0flight
+  {
+    Carrid             = carrid;
+    Connid             = connid;
+    Fldate             = fldate;
+    Price              = price;
+    Currency           = currency;
+    Planetype          = planetype;
+    Seatsmax           = seatsmax;
+    Seatsocc           = seatsocc;
+    Paymentsum         = paymentsum;
+    SeatsmaxB          = seatsmax_b;
+    SeatsoccB          = seatsocc_b;
+    SeatsmaxF          = seatsmax_f;
+    SeatsoccF          = seatsocc_f;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt      = last_changed_at;
+  }
+}

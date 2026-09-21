@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Carrid'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Carrid'
+annotate view ZC_J0FLIGHT with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+  @EndUserText.label: 'Carrid'
+  @UI.identification: [ { position: 10, label: 'Carrid' } ]
+  @UI.lineItem: [ { position: 10, label: 'Carrid' } ]
+  @UI.selectionField: [ { position: 10 } ]
+  Carrid;
+  
+  @EndUserText.label: 'Connid'
+  @UI.identification: [ { position: 20, label: 'Connid' } ]
+  @UI.lineItem: [ { position: 20, label: 'Connid' } ]
+  @UI.selectionField: [ { position: 20 } ]
+  Connid;
+  
+  @EndUserText.label: 'Fldate'
+  @UI.identification: [ { position: 30, label: 'Fldate' } ]
+  @UI.lineItem: [ { position: 30, label: 'Fldate' } ]
+  Fldate;
+  
+//  " Planetype colocado ANTES de Price (position 40 vs 50)
+  @EndUserText.label: 'Planetype'
+  @UI.identification: [ { position: 40, label: 'Planetype' } ]
+  @UI.lineItem: [ { position: 40, label: 'Planetype' } ]
+  Planetype;
+
+  @EndUserText.label: 'Price'
+  @UI.identification: [ { position: 50, label: 'Price' } ]
+  @UI.lineItem: [ { position: 50, label: 'Price' } ]
+  Price;
+  
+  @EndUserText.label: 'Seatsmax'
+  @UI.identification: [ { position: 60, label: 'Seatsmax' } ]
+  @UI.lineItem: [ { position: 60, label: 'Seatsmax' } ]
+  Seatsmax;
+  
+  @EndUserText.label: 'Seatsocc'
+  @UI.identification: [ { position: 70, label: 'Seatsocc' } ]
+  @UI.lineItem: [ { position: 70, label: 'Seatsocc' } ]
+  Seatsocc;
+  
+  @EndUserText.label: 'Paymentsum'
+  @UI.identification: [ { position: 80, label: 'Paymentsum' } ]
+  @UI.lineItem: [ { position: 80, label: 'Paymentsum' } ]
+  Paymentsum;
+  
+  @EndUserText.label: 'SeatsmaxB'
+  @UI.identification: [ { position: 90, label: 'SeatsmaxB' } ]
+  @UI.lineItem: [ { position: 90, label: 'SeatsmaxB' } ]
+  SeatsmaxB;
+  
+  @EndUserText.label: 'SeatsoccB'
+  @UI.identification: [ { position: 100, label: 'SeatsoccB' } ]
+  @UI.lineItem: [ { position: 100, label: 'SeatsoccB' } ]
+  SeatsoccB;
+  
+  @EndUserText.label: 'SeatsmaxF'
+  @UI.identification: [ { position: 110, label: 'SeatsmaxF' } ]
+  @UI.lineItem: [ { position: 110, label: 'SeatsmaxF' } ]
+  SeatsmaxF;
+  
+  @EndUserText.label: 'SeatsoccF'
+  @UI.identification: [ { position: 120, label: 'SeatsoccF' } ]
+  @UI.lineItem: [ { position: 120, label: 'SeatsoccF' } ]
+  SeatsoccF;
+  
+//  " Campos administrativos ocultos de la UI
+  @UI.hidden: true
+  CreatedBy;
+  
+  @UI.hidden: true
+  CreatedAt;
+  
+  @UI.hidden: true
+  LocalLastChangedBy;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+  
+  @UI.hidden: true
+  LastChangedAt;
+}
